@@ -27,6 +27,12 @@ module WikiCloth
 	end
       end
 
+      def image_link_attributes_for(&block)
+  self.send :define_method, 'image_link_attributes_for' do |url|
+    self.instance_exec(url, &block)
+  end
+      end
+
       def toc(&block)
         self.send :define_method, 'toc' do |sections, numbered|
           self.instance_exec(sections, numbered, &block)
