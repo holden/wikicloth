@@ -236,7 +236,7 @@ class WikiLinkHandler < WikiNamespaces
       sane_title = title.nil? ? "" : title.gsub(/<\/?[^>]*>/, "")
       if ["thumb","thumbnail","frame","miniatur"].include?(type)
         pre_img = '<div class="thumb t' + loc + '"><div class="thumbinner" style="width: ' + w.to_s +
-            'px;"><a href="#{image_link_attributes_for(resource)}" class="image" title="' + sane_title + '">'
+            "px;\"><a href=\"#{image_link_attributes_for(resource)}\" class=\"image\" title=\"' + sane_title + '\">"
         post_img = '</a><div class="thumbcaption">' + title + '</div></div></div>'
       end
       "#{pre_img}<img src=\"#{image_url_for(resource)}\" alt=\"#{sane_title}\" title=\"#{sane_title}\" style=\"#{css.join(";")}\" />#{post_img}"
