@@ -72,8 +72,8 @@ module WikiCloth
       end
 
       def section_link(&block)
-        self.send :define_method, 'section_link' do |section|
-          self.instance_exec(section,&block)
+        self.send :define_method, 'section_link' do |page,section|
+          self.instance_exec(page,section,&block)
         end
       end
 
