@@ -12,8 +12,8 @@ class WikiLinkHandler < WikiNamespaces
     @references ||= []
   end
 
-  def section_link(page,section)
-    "#{page}?section=#{section}"
+  def section_link(section)
+    "?section=#{section}"
   end
 
   def params
