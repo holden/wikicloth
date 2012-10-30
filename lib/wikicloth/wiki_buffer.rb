@@ -259,7 +259,7 @@ class WikiBuffer
   def gen_heading(hnum,title)
     id = get_id_for(title.gsub(/\s+/,'_'))
     "<h#{hnum}>" + (@options[:noedit] == true ? "" :
-      "<span class=\"editsection\">&#91;<a href=\"/" + @options[:link_handler].section_link(id) +
+      "<span class=\"editsection\">&#91;<a href=\"./" + @options[:link_handler].section_link(id) +
       "\" title=\"#{I18n.t('edit section', :name => title)}\">#{I18n.t('edit')}</a>&#93;</span> ") +
       "<a name=\"#{id}\"></a><span class=\"mw-headline\" id=\"#{id}\">#{title}</span></h#{hnum}>\n"
   end
